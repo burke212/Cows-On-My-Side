@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.Cows-On-My-Side.extra.MESSAGE";
+
     Button p1BTN;
     Button p2BTN;
     Button finalizeBTN;
@@ -59,17 +62,17 @@ public class MainActivity extends Activity {
 
         // Player 1 wins.
         if(p1_counter>p2_counter){
-            intent.putExtra(Intent.EXTRA_TEXT, p1_counter);
+            intent.putExtra(EXTRA_MESSAGE, Integer.toString(p1_counter));
             startActivity(intent);
         }
         // Player 2 wins.
         else if(p2_counter>p1_counter){
-            intent.putExtra(Intent.EXTRA_TEXT, p2_counter);
+            intent.putExtra(EXTRA_MESSAGE, Integer.toString(p2_counter));
             startActivity(intent);
         }
         // Tie game.
         else{
-            intent.putExtra(Intent.EXTRA_TEXT, tie);
+            intent.putExtra(EXTRA_MESSAGE, tie);
             startActivity(intent);
         }
     }

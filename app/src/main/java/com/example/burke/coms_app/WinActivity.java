@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,9 +24,9 @@ public class WinActivity extends Activity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_TEXT);
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         winnerTV.setText(message);
-
+        //Log.d(message);
     }
 }
