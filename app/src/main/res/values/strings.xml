@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">COMS_app</string>
+    <string name="app_name">COMS</string>
     <string name="finalizeBTN">Finalize</string>
+    <string name="player_2">Player 2</string>
+    <string name="player_1">Player 1</string>
+    <string name="finalize">Finalize</string>
+    <string name="counter_num_placeholder">0</string>
+    <string name="play_again">Play Again</string>
 </resources>

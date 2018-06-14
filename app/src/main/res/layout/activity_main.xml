@@ -1,78 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#6eaec3"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
 
     <LinearLayout
+        android:id="@+id/LL_playerBTNs"
+        android:paddingTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/player1"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
-            android:text="Player One" />
+            android:text="@string/player_1"
+            android:onClick="clickPlayer1BTN"/>
 
         <Button
             android:id="@+id/player2"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
-            android:text="Player Two" />
+            android:text="@string/player_2" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:paddingTop="15dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LL_playerBTNs">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/p1_counter1"
+            android:text="Counter: "
             android:layout_weight="1"
-            android:text="Counter: " />
-
-        <EditText
+            android:textSize="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="lol" />
+            android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/p1_counter1_num"
+            android:text="@string/counter_num_placeholder"
+            android:textSize="20dp"
+            android:paddingRight="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Counter: " />
+            android:layout_height="wrap_content" />
 
-        <EditText
+        <TextView
+            android:id="@+id/p1_counter2"
+            android:text="Counter: "
+            android:layout_weight="1"
+            android:textSize="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="lol" />
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/p2_counter1_num"
+            android:text="@string/counter_num_placeholder"
+            android:paddingRight="5dp"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/FinalizeBTN"
+        android:text="@string/finalize"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/FinalizeBTN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="@string/finalizeBTN" />
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>
