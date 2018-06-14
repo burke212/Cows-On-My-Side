@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ public class WinActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.win_screen);
 
-        finalizeBTN = findViewById(R.id.resetBTN);
+        finalizeBTN = findViewById(R.id.homeBTN);
         winnerTV = findViewById(R.id.final_score);
 
 
@@ -35,5 +36,17 @@ public class WinActivity extends Activity {
 
             winnerTV.setText(message);
         }
+
+        finalizeBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetScore(view);
+            }
+        });
+    }
+
+    public void resetScore(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

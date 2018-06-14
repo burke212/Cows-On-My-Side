@@ -13,11 +13,11 @@ public class MainActivity extends Activity {
     public static final String EXTRA_MESSAGE =
             "com.example.android.Cows-On-My-Side.extra.MESSAGE";
 
-    Button p1BTN;
-    Button p2BTN;
+    Button p1_counter_BTN;
+    Button p2_counter_BTN;
     Button finalizeBTN;
-    TextView p1_counterTV;
-    TextView p2_counterTV;
+/*    TextView p1_counterTV;
+    TextView p2_counterTV;*/
 
     int p1_counter = 0;
     int p2_counter = 0;
@@ -27,21 +27,21 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        p1BTN = findViewById(R.id.player1);
-        p2BTN = findViewById(R.id.player2);
+        p1_counter_BTN = findViewById(R.id.player1_counterBTN);
+        p2_counter_BTN = findViewById(R.id.player2_counterBTN);
         finalizeBTN = findViewById(R.id.FinalizeBTN);
-        p1_counterTV = findViewById(R.id.p1_counter1_num);
-        p2_counterTV = findViewById(R.id.p2_counter1_num);
+        /*p1_counterTV = findViewById(R.id.p1_counter1_num);
+        p2_counterTV = findViewById(R.id.p2_counter1_num);*/
 
 
-        p1BTN.setOnClickListener(new View.OnClickListener() {
+        p1_counter_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickPlayer1BTN(view);
             }
         });
 
-        p2BTN.setOnClickListener(new View.OnClickListener() {
+        p2_counter_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickPlayer2BTN(view);
@@ -79,14 +79,16 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void clickPlayer2BTN(View view) {
+    public void clickPlayer2BTN(View v) {
         p2_counter++;
-        p2_counterTV.setText(Integer.toString(p2_counter));
+        p2_counter_BTN.setText(Integer.toString(p2_counter));
+        //p2_counterTV.setText(Integer.toString(p2_counter));
     }
 
     public void clickPlayer1BTN(View v){
-                p1_counter++;
-                p1_counterTV.setText(Integer.toString(p1_counter));
+        p1_counter++;
+        p1_counter_BTN.setText(Integer.toString(p1_counter));
+        //p1_counterTV.setText(Integer.toString(p1_counter));
     }
 
 
