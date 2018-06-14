@@ -62,11 +62,13 @@ public class MainActivity extends Activity {
 
         // Player 1 wins.
         if(p1_counter>p2_counter){
+            intent.putExtra("player_wins", "Player 1 Wins!");
             intent.putExtra(EXTRA_MESSAGE, Integer.toString(p1_counter));
             startActivity(intent);
         }
         // Player 2 wins.
         else if(p2_counter>p1_counter){
+            intent.putExtra("player_wins", "Player 2 Wins!");
             intent.putExtra(EXTRA_MESSAGE, Integer.toString(p2_counter));
             startActivity(intent);
         }
