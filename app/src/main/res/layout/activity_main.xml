@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/RL_1"
+        android:background="@drawable/custom_border"
+        android:layout_margin="1dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -32,32 +36,35 @@
 
         <LinearLayout
             android:id="@+id/LL_1.2"
-            android:layout_below="@+id/LL_1.1"
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/player1_counterBTN"
+                android:id="@+id/player1_counter_btn"
                 android:text="@string/default_counter_text"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
 
             <Button
-                android:id="@+id/player2_counterBTN"
+                android:id="@+id/player2_counter_btn"
                 android:layout_weight="1"
                 android:text="@string/default_counter_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/RL_2"
-        android:layout_below="@+id/RL_1"
+        android:background="@drawable/custom_border"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -84,32 +91,34 @@
 
         <LinearLayout
             android:id="@+id/LL_2.2"
-            android:layout_below="@+id/LL_2.1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/player1_counter_btn"
+                android:id="@+id/player3_counter_btn"
                 android:text="@string/default_counter_text"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
 
             <Button
-                android:id="@+id/player2_counter_btn"
+                android:id="@+id/player4_counter_btn"
                 android:text="@string/default_counter_text"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/RL_3"
-        android:layout_below="@+id/RL_2"
+        android:background="@drawable/custom_border"
+        android:layout_margin="1dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -124,16 +133,17 @@
             android:layout_below="@+id/player5_tv"
             android:text="@string/default_counter_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/final_score_btn"
-        android:text="@string/finalize"
-        android:layout_alignParentBottom="true"
+        android:text="@string/score"
+        android:paddingTop="10dp"
+        android:layout_weight="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 
-</RelativeLayout>
+</LinearLayout>

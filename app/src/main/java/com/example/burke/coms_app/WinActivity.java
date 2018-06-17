@@ -26,7 +26,7 @@ public class WinActivity extends Activity {
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         String winner = intent.getStringExtra("player_wins");
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message = intent.getStringExtra("Player Counter");
 
         if(winner == null){
             winnerTV.setText(message);
