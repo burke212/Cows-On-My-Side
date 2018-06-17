@@ -7,4 +7,7 @@
     <string name="counter_num_placeholder">0</string>
     <string name="play_again">Play Again</string>
     <string name="default_counter_text">0</string>
+    <string name="player_3">Player 3</string>
+    <string name="player_4">Player 4</string>
+    <string name="player_5">Player 5</string>
 </resources>

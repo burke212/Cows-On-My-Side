@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/LL_top_row_tv"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/player1_TV"
+            android:text="Player 1"
+            android:textSize="50sp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/player2_TV"
+            android:text="Player 2"
+            android:textSize="50sp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_top_row_btns"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/large_layout_size"
+        android:layout_below="@+id/LL_top_row_tv">
+
+        <Button
+            android:id="@+id/player1_counterBTN"
+            android:textSize="40sp"
+            android:text="@string/default_counter_text"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="clickPlayer1BTN"/>
+
+        <Button
+            android:id="@+id/player2_counterBTN"
+            android:textSize="40sp"
+            android:text="@string/default_counter_text"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_2nd_row_tv"
+        android:layout_below="@+id/LL_top_row_btns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/player3_tv"
+            android:text="Player 3"
+            android:textSize="50sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_2nd_row_btn"
+        android:layout_below="@+id/LL_2nd_row_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/player3_counterBTN"
+            android:textSize="40sp"
+            android:text="@string/default_counter_text"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="clickPlayer1BTN"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/FinalizeBTN"
+        android:text="@string/finalize"
+        android:textSize="50sp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
