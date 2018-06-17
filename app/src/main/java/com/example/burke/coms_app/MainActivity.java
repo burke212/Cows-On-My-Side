@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.lang.reflect.Array;
 import java.net.Inet4Address;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -32,6 +33,8 @@ public class MainActivity extends Activity {
     int p3_counter = 0;
     int p4_counter = 0;
     int p5_counter = 0;
+
+    List<Integer> scores = new ArrayList<Integer>(5);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,12 +108,14 @@ public class MainActivity extends Activity {
     // Increase button counter, & display new value.
     public void clickPlayer1BTN(View v){
         p1_counter++;
+        scores.set(0, p1_counter);
         p1_counter_BTN.setText(String.format(String.valueOf(p1_counter)));
     }
 
     // Increase button counter, & display new value.
     public void clickPlayer2BTN(View v) {
         p2_counter++;
+        scores.set(1, p2_counter);
         p2_counter_BTN.setText(String.format(String.valueOf(p2_counter)));
         /*p2_counter_BTN.setText(Integer.toString(p2_counter));*/
     }
@@ -118,18 +123,21 @@ public class MainActivity extends Activity {
     // Increase button counter, & display new value.
     private void clickPlayer3BTN(View view) {
         p3_counter++;
+        scores.set(2, p3_counter);
         p3_counter_BTN.setText(String.format(String.valueOf(p3_counter)));
     }
 
     // Increase button counter, & display new value.
     private void clickPlayer4BTN(View view) {
         p4_counter++;
+        scores.set(3, p4_counter);
         p4_counter_BTN.setText(String.format(String.valueOf(p4_counter)));
     }
 
     // Increase button counter, & display new value.
     private void clickPlayer5BTN(View view) {
         p5_counter++;
+        scores.set(4, p5_counter);
         p5_counter_BTN.setText(String.format(String.valueOf(p5_counter)));
     }
 
@@ -160,10 +168,11 @@ public class MainActivity extends Activity {
     }
 
     private void getHighestScore(int p1_counter, int p2_counter, int p3_counter, int p4_counter, int p5_counter) {
-        int[] values = {p1_counter, p2_counter, p3_counter, p4_counter, p5_counter};
-        ArrayList<Integer> list = new ArrayList<Integer>();
-
-        list.addAll(<int> values);
+        /*
+        * need to search the list/ arraylist so that the highest value's index is returne. i.e. the
+        * largest value will return its index, which will tell you which player has the highest score.
+        *
+        * Checkout: https://stackoverflow.com/questions/12788182/finding-the-largest-value-in-an-arraylist*/
 
     }
 
