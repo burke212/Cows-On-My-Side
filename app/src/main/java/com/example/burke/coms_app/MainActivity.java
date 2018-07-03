@@ -181,38 +181,16 @@ public class MainActivity extends Activity {
                 intent.putExtra("Player Counter", Integer.toString(p5_counter));
                 startActivity(intent);
                 break;
-            default:// Tie game
+            case 5:// Tie game
                 intent.putExtra("Player Counter", tie);
                 startActivity(intent);
                 break;
+            default:
+                break;
         }
-
-/*        // Player 1 wins.
-        if(p1_counter>p2_counter){
-            intent.putExtra("player_wins", "Player 1 Wins!");
-            intent.putExtra("Player Counter", Integer.toString(p1_counter));
-            startActivity(intent);
-        }
-        // Player 2 wins.
-        else if(p2_counter>p1_counter){
-            intent.putExtra("player_wins", "Player 2 Wins!");
-            intent.putExtra("Player Counter", Integer.toString(p2_counter));
-            startActivity(intent);
-        }
-        // Tie game.
-        else{
-            intent.putExtra("Player Counter", tie);
-            startActivity(intent);
-        }*/
     }
 
     private int getHighestScore() {
-        /*
-        * need to search the list/ arraylist so that the highest value's index is returne. i.e. the
-        * largest value will return its index, which will tell you which player has the highest score.
-        *
-        * Checkout: https://stackoverflow.com/questions/12788182/finding-the-largest-value-in-an-arraylist*/
-
         int counter = 0;
         int max = 0;
         int index = 0;
@@ -225,20 +203,10 @@ public class MainActivity extends Activity {
             counter++;
         }
 
-        /*
-        * int counter =0;
-        * int maxNum = 0;
-        * int index =0;
-        * for(int num : arrayListOfNumbers){
-        *   if(maxNum<num){
-        *       maxNum = num;
-        *       index= counter;
-        *   }
-        *counter++;
-        * }
-        * System.Out.printLn(“The biggest number is ”+ maxNum + “ and its index in array list is “ + index);
-        *
-        * */
+        if(max==0){
+            index=5;
+        }
+
         return index;
     }
 
