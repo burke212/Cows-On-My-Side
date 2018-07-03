@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
         p5_counter_BTN = findViewById(R.id.player5_counter_btn);
         finalizeBTN = findViewById(R.id.final_score_btn);
 
+        initializeScores();
 
         // Player 1 BTN counter click listener.
         p1_counter_BTN.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +105,12 @@ public class MainActivity extends Activity {
         });
     }
 
+    private void initializeScores() {
+        for(int i = 1; i<=5;i++){
+            scores.add(0);
+        }
+    }
+
 
     // Increase button counter, & display new value.
     public void clickPlayer1BTN(View v){
@@ -146,9 +153,41 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, WinActivity.class);
         String tie = "Tie Game!";
 
-        getHighestScore(p1_counter, p2_counter, p3_counter, p4_counter, p5_counter);
+        int player_with_highest_score = getHighestScore();
 
-        // Player 1 wins.
+        switch (player_with_highest_score){
+            case 0:// Player 1 wins
+                intent.putExtra("player_wins", "Player 1 Wins!");
+                intent.putExtra("Player Counter", Integer.toString(p1_counter));
+                startActivity(intent);
+                break;
+            case 1:// Player 2 wins
+                intent.putExtra("player_wins", "Player 2 Wins!");
+                intent.putExtra("Player Counter", Integer.toString(p2_counter));
+                startActivity(intent);
+                break;
+            case 2:// Player 3 wins
+                intent.putExtra("player_wins", "Player 3 Wins!");
+                intent.putExtra("Player Counter", Integer.toString(p3_counter));
+                startActivity(intent);
+                break;
+            case 3:// Player 4 wins
+                intent.putExtra("player_wins", "Player 4 Wins!");
+                intent.putExtra("Player Counter", Integer.toString(p4_counter));
+                startActivity(intent);
+                break;
+            case 4:// Player 5 wins
+                intent.putExtra("player_wins", "Player 5 Wins!");
+                intent.putExtra("Player Counter", Integer.toString(p5_counter));
+                startActivity(intent);
+                break;
+            default:// Tie game
+                intent.putExtra("Player Counter", tie);
+                startActivity(intent);
+                break;
+        }
+
+/*        // Player 1 wins.
         if(p1_counter>p2_counter){
             intent.putExtra("player_wins", "Player 1 Wins!");
             intent.putExtra("Player Counter", Integer.toString(p1_counter));
@@ -164,16 +203,43 @@ public class MainActivity extends Activity {
         else{
             intent.putExtra("Player Counter", tie);
             startActivity(intent);
-        }
+        }*/
     }
 
-    private void getHighestScore(int p1_counter, int p2_counter, int p3_counter, int p4_counter, int p5_counter) {
+    private int getHighestScore() {
         /*
         * need to search the list/ arraylist so that the highest value's index is returne. i.e. the
         * largest value will return its index, which will tell you which player has the highest score.
         *
         * Checkout: https://stackoverflow.com/questions/12788182/finding-the-largest-value-in-an-arraylist*/
 
+        int counter = 0;
+        int max = 0;
+        int index = 0;
+
+        for(int elem : scores){
+            if(max<elem){
+                max = elem;
+                index = counter;
+            }
+            counter++;
+        }
+
+        /*
+        * int counter =0;
+        * int maxNum = 0;
+        * int index =0;
+        * for(int num : arrayListOfNumbers){
+        *   if(maxNum<num){
+        *       maxNum = num;
+        *       index= counter;
+        *   }
+        *counter++;
+        * }
+        * System.Out.printLn(“The biggest number is ”+ maxNum + “ and its index in array list is “ + index);
+        *
+        * */
+        return index;
     }
 
 }
