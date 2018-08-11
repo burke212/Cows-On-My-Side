@@ -13,6 +13,19 @@
                       <PersistentState>
                         <option name="children">
                           <map>
+                            <entry key="actionbar">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="D:\Art\COMS_app\app_icon_cow_brown.png" />
+                                      <entry key="theme" value="CUSTOM" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
                             <entry key="launcher">
                               <value>
                                 <PersistentState>
@@ -35,10 +48,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="D:\Art\COMS_app\app_icon_cow.png.png" />
+                                      <entry key="foregroundImage" value="D:\Art\COMS_app\app_icon_cow_purple.png" />
                                       <entry key="foregroundLayerName" value="ic_launcher_foreground_cow" />
                                       <entry key="legacyIconShape" value="NONE" />
-                                      <entry key="outputName" value="app_cow_icon" />
+                                      <entry key="outputName" value="app_cow_icon3" />
                                       <entry key="webIconShape" value="NONE" />
                                     </map>
                                   </option>
@@ -52,7 +65,7 @@
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="D:\Art\COMS_app\app_icon_cow.png" />
+                                      <entry key="imageAsset" value="D:\Art\COMS_app\app_icon_cow2.svg" />
                                       <entry key="outputName" value="COMS_launch_icon" />
                                     </map>
                                   </option>
@@ -61,17 +74,17 @@
                             </entry>
                           </map>
                         </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
-                          </map>
-                        </option>
                       </PersistentState>
                     </value>
                   </entry>
                 </map>
               </option>
             </PersistentState>
+          </value>
+        </entry>
+        <entry key="vectorWizard">
+          <value>
+            <PersistentState />
           </value>
         </entry>
       </map>
