@@ -54,7 +54,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/next_btn"
+        android:id="@+id/next_btn_player_info"
         android:text="Next"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/player_icon_ll"
