@@ -23,7 +23,7 @@ public class PlayerInfo extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.win_screen);
+        setContentView(R.layout.player_info);
 
         // Get IDs
         player_num_TV = findViewById(R.id.player_info_tv);
@@ -35,7 +35,7 @@ public class PlayerInfo extends Activity{
 
 
         Intent intent = getIntent();
-        String num_of_players_str = intent.getStringExtra("number of players");
+        String num_of_players_str = intent.getStringExtra("number_of_players");
 
         getPlayerInfo(num_of_players_str);
 
@@ -59,9 +59,12 @@ public class PlayerInfo extends Activity{
     public void getPlayerInfo(String num_of_players){
 
         // Get player's names & icons as many times as there are players
-        for(int i = 1; i < Integer.parseInt(num_of_players); i++){
+        for(int i = 1; i <= Integer.parseInt(num_of_players); i++){
+            // Reset the TV so that the correct player number (i.e. player 1, 2... is displayed.
+            player_num_TV.setText("Player " + Integer.toString(i));
+
             // Intent to send the player number (not num of players).
-            Intent intentSend = new Intent(this, PlayerInfo.class);
+            Intent intentSend = new Intent(this, MainActivity.class);
 
             // Intent to get per player info (name & icon choice).
             Intent intentGet = getIntent();

@@ -9,52 +9,61 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainMenu extends Activity {
+public class MainMenu extends Activity implements View.OnClickListener {
 
-    SeekBar player_num_SB;
-    Button next_BTN;
     TextView num_of_players_TV;
+    Button two_player_BTN;
+    Button three_player_BTN;
+    Button four_player_BTN;
+    Button five_player_BTN;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_menu);
 
         // Find id's.
-        player_num_SB = findViewById(R.id.player_num_seekbar);
-        next_BTN = findViewById(R.id.next_btn_mainmenu);
-        num_of_players_TV = findViewById(R.id.num_of_players_from_seekbar_tv);
+        num_of_players_TV = findViewById(R.id.num_players_tv);
+        two_player_BTN = findViewById(R.id.two_player_btn_mainmenu);
+        three_player_BTN = findViewById(R.id.three_player_btn_mainmenu);
+        four_player_BTN = findViewById(R.id.four_player_btn_mainmenu);
+        five_player_BTN = findViewById(R.id.five_player_btn_mainmenu);
 
 
-        player_num_SB.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int progressChangedValue = 2;
-
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progressChangedValue = progress;
-            }
-
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                num_of_players_TV.setText(progressChangedValue);
-            }
-        });
-
-        // Player 1 BTN counter click listener.
-        next_BTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nextButton(view);
-            }
-        });
+        two_player_BTN.setOnClickListener((View.OnClickListener) this);
+        three_player_BTN.setOnClickListener((View.OnClickListener) this);
+        four_player_BTN.setOnClickListener(this);
+        five_player_BTN.setOnClickListener(this);
     }
 
-    public void nextButton(View view) {
+    //@Override
+    public void onClick(View view){
         Intent intent = new Intent(this, PlayerInfo.class);
 
-        intent.putExtra("number of players", "Player 1 Wins!");
-        startActivity(intent);
+        switch (view.getId()){
+            case R.id.two_player_btn_mainmenu:
+                intent.putExtra("number_of_players", 2);
+                startActivity(intent);
+                break;
+
+            case R.id.three_player_btn_mainmenu:
+                intent.putExtra("number_of_players", 3);
+                startActivity(intent);
+                break;
+
+            case R.id.four_player_btn_mainmenu:
+                intent.putExtra("number_of_players", 4);
+                startActivity(intent);
+                break;
+
+            case R.id.five_player_btn_mainmenu:
+                intent.putExtra("number_of_players", 5);
+                startActivity(intent);
+                break;
+
+            default:
+                break;
+        }
     }
 
 
