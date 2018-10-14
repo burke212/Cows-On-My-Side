@@ -41,7 +41,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/app_cow_icon2_round" />
+            app:srcCompat="@mipmap/COMS_brown_cow_icon" />
 
         <ImageButton
             android:id="@+id/player_icon_3_imageButton"
@@ -49,7 +49,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/app_cow_icon3_round" />
+            app:srcCompat="@mipmap/COMS_purple_cow_icon" />
 
     </LinearLayout>
 
