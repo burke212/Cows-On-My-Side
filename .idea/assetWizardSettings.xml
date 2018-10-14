@@ -47,6 +47,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
+                                      <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
                                       <entry key="foregroundImage" value="D:\Art\COMS_app\app_icon_cow_purple.png" />
                                       <entry key="foregroundLayerName" value="ic_launcher_foreground_cow" />
@@ -65,13 +66,18 @@
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="D:\Art\COMS_app\app_icon_cow2.svg" />
-                                      <entry key="outputName" value="COMS_launch_icon" />
+                                      <entry key="imageAsset" value="D:\Art\COMS_app\app_icon_cow.png" />
+                                      <entry key="outputName" value="COMS_white_cow_icon" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
                           </map>
                         </option>
                       </PersistentState>
