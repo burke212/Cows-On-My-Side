@@ -33,9 +33,9 @@ public class PlayerInfo extends Activity{
         purple_cow_IB = findViewById(R.id.player_icon_3_imageButton);
         next_BTN = findViewById(R.id.next_btn_player_info);
 
-
+        // Intent to get the number of players.
         Intent intent = getIntent();
-        String num_of_players_str = intent.getStringExtra("number_of_players");
+        final String num_of_players_str = intent.getStringExtra("number_of_players");
 
         getPlayerInfo(num_of_players_str);
 
@@ -43,18 +43,20 @@ public class PlayerInfo extends Activity{
         next_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nextButton(view);
+
             }
         });
     }
 
-    /*need to send all players names & chosen icons*/
+
+
+    /*need to send all players names & chosen icons*//*
     public void nextButton(View view) {
         Intent intent = new Intent(this, PlayerInfo.class);
 
         intent.putExtra("number of players", "Player 1 Wins!");
         startActivity(intent);
-    }
+    }*/
 
     public void getPlayerInfo(String num_of_players){
 
@@ -64,17 +66,19 @@ public class PlayerInfo extends Activity{
             player_num_TV.setText("Player " + Integer.toString(i));
 
             // Intent to send the player number (not num of players).
-            Intent intentSend = new Intent(this, MainActivity.class);
+//            Intent intentSend = new Intent(this, MainActivity.class);
 
             // Intent to get per player info (name & icon choice).
-            Intent intentGet = getIntent();
+//            Intent intentGet = getIntent();
 
             // Send the current player's number (1, 2, 3, 4).
-            intentSend.putExtra("player number", i);
-            startActivity(intentSend);
+//            intentSend.putExtra("player number", i);
+//            startActivity(intentSend);
 
-            players_names[i] = intentGet.getStringExtra("player name");// Get player name.
-            players_icon_choices[i] = Integer.parseInt(intentGet.getStringExtra("icon choice"));// Get player icon choice.
+//            players_names[i] = intentGet.getStringExtra("player name");// Get player name.
+//            players_icon_choices[i] = Integer.parseInt(intentGet.getStringExtra("icon choice"));// Get player icon choice.
+
+
         }
     }
 

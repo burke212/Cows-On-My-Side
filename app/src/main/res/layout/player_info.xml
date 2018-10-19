@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
@@ -29,10 +30,10 @@
 
         <ImageButton
             android:id="@+id/player_icon_1_imageButton"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
             app:srcCompat="@mipmap/coms_launch_icon" />
 
         <ImageButton
@@ -41,7 +42,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/COMS_brown_cow_icon" />
+            app:srcCompat="@mipmap/brown_cow_icon" />
 
         <ImageButton
             android:id="@+id/player_icon_3_imageButton"
@@ -49,7 +50,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/COMS_purple_cow_icon" />
+            app:srcCompat="@mipmap/purple_cow_icon" />
 
     </LinearLayout>
 
@@ -61,5 +62,6 @@
         android:layout_marginTop="150dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
 
 </RelativeLayout>

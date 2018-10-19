@@ -41,7 +41,7 @@ public class GameScreen extends Activity {
 
         String[] playerNames = extras.getStringArray("player names");
         int[] playersIconChoices = extras.getIntArray("player icon choice");
-        int numPlayers = intent.getStringExtra("");
+        //int numPlayers = intent.getStringExtra("");
 
         validatePlayerNames(playerNames);
 

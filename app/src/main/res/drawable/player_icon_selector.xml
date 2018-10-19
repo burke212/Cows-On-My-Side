@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        &lt;!&ndash; NOTE: order is important (the first matching state(s) is what is rendered) &ndash;&gt;
+        <item
+            android:state_selected="true"
+            android:drawable="@drawable/info_icon_solid_with_shadow" />
+        <item
+            android:drawable="@drawable/info_icon_outline_with_shadow" />-->
+</selector>
