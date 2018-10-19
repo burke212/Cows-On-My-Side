@@ -2,11 +2,14 @@ package com.example.burke.coms_app;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import static android.content.ContentValues.TAG;
 
 public class PlayerInfo extends Activity{
 
@@ -33,11 +36,17 @@ public class PlayerInfo extends Activity{
         purple_cow_IB = findViewById(R.id.player_icon_3_imageButton);
         next_BTN = findViewById(R.id.next_btn_player_info);
 
+
+        Log.d(TAG, "onCreate: test");
+        final String num_of_players_str;
         // Intent to get the number of players.
         Intent intent = getIntent();
-        final String num_of_players_str = intent.getStringExtra("number_of_players");
+        if(intent.getStringExtra("number_of_players") != null){
+            num_of_players_str = intent.getStringExtra("number_of_players");
+            getPlayerInfo(num_of_players_str);
+        }
 
-        getPlayerInfo(num_of_players_str);
+
 
         // Player 1 BTN counter click listener.
         next_BTN.setOnClickListener(new View.OnClickListener() {

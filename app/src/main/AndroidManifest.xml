@@ -17,6 +17,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".PlayerInfo"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+
         <activity android:name=".WinActivity"
             android:parentActivityName=".MainActivity">
 
