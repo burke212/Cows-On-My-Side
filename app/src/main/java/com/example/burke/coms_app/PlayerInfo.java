@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.content.ContentValues.TAG;
 
@@ -20,8 +21,8 @@ public class PlayerInfo extends Activity{
     ImageButton purple_cow_IB;
     Button next_BTN;
 
-    String players_names[] = {"0", "0", "0", "0"};
-    int players_icon_choices[] = {0, 0, 0, 0};
+
+    Boolean player_icon_selected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,12 @@ public class PlayerInfo extends Activity{
 
 
         Log.d(TAG, "onCreate: test");
+
         final String num_of_players_str;
+
         // Intent to get the number of players.
         Intent intent = getIntent();
+
         if(intent.getStringExtra("number_of_players") != null){
             num_of_players_str = intent.getStringExtra("number_of_players");
             getPlayerInfo(num_of_players_str);
@@ -52,7 +56,8 @@ public class PlayerInfo extends Activity{
         next_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //intent to game loop.
+                // check that all player info is obtained first.
             }
         });
     }
@@ -70,9 +75,9 @@ public class PlayerInfo extends Activity{
     public void getPlayerInfo(String num_of_players){
 
         // Get player's names & icons as many times as there are players
-        for(int i = 1; i <= Integer.parseInt(num_of_players); i++){
+        for(int i = 0; i < Integer.parseInt(num_of_players); i++){
             // Reset the TV so that the correct player number (i.e. player 1, 2... is displayed.
-            player_num_TV.setText("Player " + Integer.toString(i));
+            player_num_TV.setText("Player " + Integer.toString(i+1));
 
             // Intent to send the player number (not num of players).
 //            Intent intentSend = new Intent(this, MainActivity.class);
@@ -84,10 +89,23 @@ public class PlayerInfo extends Activity{
 //            intentSend.putExtra("player number", i);
 //            startActivity(intentSend);
 
-//            players_names[i] = intentGet.getStringExtra("player name");// Get player name.
-//            players_icon_choices[i] = Integer.parseInt(intentGet.getStringExtra("icon choice"));// Get player icon choice.
+            players_names[i] = player_name_ET.getText().toString();// Get player name.
+//            players_icon_choices[i] = ;// Get player icon choice.
+            getPlayerIconChoice();
 
+        }
+    }
 
+    public void getPlayerIconChoice(){
+        if(player_icon_selected){
+            if(white_cow_IB.isPressed()){
+
+            }
+        }
+        else{
+            Toast toast = new Toast(this);
+            toast.setText("Please select a character");
+            toast.show();
         }
     }
 

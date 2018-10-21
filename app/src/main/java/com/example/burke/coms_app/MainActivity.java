@@ -20,6 +20,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button four_player_BTN;
     Button five_player_BTN;
 
+    int num_players = 0;
+    int player_num = 0;
+    String players_names[] = {"0", "0", "0", "0"};
+    int players_icon_choices[] = {0, 0, 0, 0};
+    
+    Intent sendIntentPlayerInfo = new Intent(this, PlayerInfo.class);
+    Intent receiveIntentPlayerInfo = new Intent(this, PlayerInfo.class);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,32 +50,43 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     //@Override
     public void onClick(View view){
-        Intent intent = new Intent(this, PlayerInfo.class);
-
         switch (view.getId()){
             case R.id.two_player_btn_mainmenu:
-                intent.putExtra("number_of_players", 2);
-                startActivity(intent);
+                num_players = 2;
+                getPlayerInfo(num_players);
                 break;
 
             case R.id.three_player_btn_mainmenu:
-                intent.putExtra("number_of_players", 3);
-                startActivity(intent);
+                num_players = 3;
+                getPlayerInfo(num_players);
                 break;
 
             case R.id.four_player_btn_mainmenu:
-                intent.putExtra("number_of_players", 4);
-                startActivity(intent);
+                num_players = 4;
+                getPlayerInfo(num_players);
                 break;
 
             case R.id.five_player_btn_mainmenu:
-                intent.putExtra("number_of_players", 5);
-                startActivity(intent);
+                num_players = 5;
+                getPlayerInfo(num_players);
                 break;
 
             default:
                 break;
         }
+    }
+
+    public void getPlayerInfo(int num_players){
+        for(int i = 0; i < num_players; i++)
+        {
+            player_num = i;
+
+            sendIntentPlayerInfo.putExtra("player number", player_num);
+            sendIntentPlayerInfo.putExtra("number_of_players", num_players);
+            
+            startActivity(sendIntentPlayerInfo);
+        }
+
     }
 
 }
